@@ -1,0 +1,17 @@
+<div class = "message-container" [class] = "read?'msg-read':'msg-unread'" (click)="readMessage()">
+    <div class = "left-container">
+    <p>Name: <strong> {{name}}</strong></p>
+    <p>Email: <strong>{{email}}</strong> </p>
+    <p>Message: <strong>{{message}}</strong> </p>  
+</div>
+
+    <div class = "right-container" >
+    <p *ngIf="read"> Message read.</p>  
+    <p *ngIf="!read"> Message not read.</p>
+    <ng-container *ngIf="read">
+          <button (click)="deleteMessage()"> Delete </button>
+    </ng-container>
+    <button (click)="editMessage()"> Edit </button>
+  
+    </div>
+</div>

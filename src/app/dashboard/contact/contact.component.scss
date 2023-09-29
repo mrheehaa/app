@@ -1,0 +1,52 @@
+.container {
+    padding: 50px;
+    width:100%;
+    max-width: 1440px;
+    height: 100%;
+    border: 1px solid black;
+    margin: auto;
+    min-height: 800px;
+
+    .contact-form {
+        width: 600px;
+        height: 700px ;
+        margin: auto;
+        padding: 20px;
+        input, textarea, label {
+            font-size: 20px;
+        }
+        textarea, input {
+            border: 1px solid grey;
+        }
+        label {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        
+        }
+        button {
+            padding: 10px 20px; 
+            border-radius:10px ;
+            border: none;
+            width: 30%;
+            font-size: 20px;
+        }
+        .clear-button {
+            background-color: rgb(255, 166, 0);
+            color: white;
+        }
+        .send-button {
+            background-color: yellowgreen;
+            color: white;
+        }
+        .action-container {
+            justify-content: space-between;
+        }
+    }
+}
+
+.with-bg{
+    background-image: url("/assets/images/cool-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}

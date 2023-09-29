@@ -1,0 +1,23 @@
+<div class = "container with-bg">
+    
+    <div class = "contact-form" [formGroup]="contactForm">
+        <div class = "name-container w-full flex flex-col font-bold">
+            <label class = "w-full" for="nameField"> Name</label>
+            <input class=" py-1 px-1 rounded-md" type="text" id = "nameField" formControlName="name">
+        </div>
+        <div class = "email-container w-full flex flex-col font-bold">
+            <label class = "w-full"  for="emailField"> Email: </label>
+            <input class = "py-1 px-1 rounded-md" type="text" id = "emailField" formControlName = "email">
+
+        </div>
+        <div class = "message-container w-full flex flex-col font-bold">
+            <label class = "w-full" for="messageField"> Message: </label>
+            <textarea class = "px-1 py-1 rounded-md" name="" id="messageField" cols="30" rows="10" formControlName = "message"></textarea>
+        </div>
+        <div class = "action-container w-full py-1 flex ">
+            <button class = "clear-button font-bold" (click)="clear()"> Clear</button>
+            <button class = "send-button font-bold" (click)="save()"> Send</button>
+        </div>
+    </div>
+</div>
+

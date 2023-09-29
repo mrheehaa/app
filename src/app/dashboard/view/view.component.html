@@ -1,0 +1,18 @@
+<div class = "card-container">
+    <button (click)="sortByStatus(1)"> Sort by read</button>
+    <button (click)="sortByStatus()"> Sort by unread</button>
+    <ng-container> 
+        <!-- <p *ngFor="let message of messages">{{message.name}} - {{message.email}} - {{message.message}} </p> -->
+        <app-contact-card 
+        *ngFor="let message of messages; let i = index" 
+        [c-name]="message.name"
+        [c-email]="message.email"
+        [c-message]="message.message"
+        [c-read]="message.read"
+        (msg-read)="toggleMsgStatus($event, i)"
+        (delete-me)="deleteMessage(i)"
+        (edit)="editMessage(i)"
+        ></app-contact-card>
+
+    </ng-container>
+</div>
