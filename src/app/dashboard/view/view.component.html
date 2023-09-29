@@ -10,7 +10,7 @@
         [c-message]="message.message"
         [c-read]="message.read"
         (msg-read)="toggleMsgStatus($event, i)"
-        
+        (delete-me)="deleteMessage(i)"
         (edit)="editMessage(i)"
         ></app-contact-card>
 
