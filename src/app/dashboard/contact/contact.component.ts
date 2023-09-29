@@ -22,7 +22,7 @@ export class ContactComponent implements OnInit, OnDestroy{
 
 
  ngOnInit(): void {
-    this.contactForm.valueChanges.subscribe(data=>console.log(data))
+    this.edit()
  }
 
  ngOnDestroy(): void {
@@ -45,7 +45,6 @@ export class ContactComponent implements OnInit, OnDestroy{
     }
     messages.unshift(message)
     localStorage.setItem('messages', JSON.stringify(messages))
-    console.log(messages)
     
     this.contactForm.patchValue({
       name: '',
@@ -68,5 +67,12 @@ export class ContactComponent implements OnInit, OnDestroy{
     message:''
   })
  }
+ public edit() {
+  if (localStorage.getItem('edit')) {
+    let messageToEdit = JSON.parse(localStorage.getItem('edit')??'')
+    this.contactForm.patchValue(messageToEdit)
+    localStorage.removeItem('edit')
+  }
 
+ }
 }

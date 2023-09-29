@@ -13,7 +13,6 @@ export class ViewComponent {
   constructor(private router:Router) {
     
    this.messages = JSON.parse(localStorage.getItem('messages')??'')
-   console.log(this.messages)
    this.sortByStatus()
   }
 
@@ -21,7 +20,6 @@ export class ViewComponent {
   public toggleMsgStatus(event:any,index:number) {
     this.messages[index].read = event 
     
-    console.log(this.messages)
     this.sortByStatus()
     this.save()
   }
@@ -44,8 +42,9 @@ public editMessage(i:number) {
 
   }) 
   this.save()
-
+  localStorage.setItem('edit', JSON.stringify(messageToEdit))
   this.router.navigate(["/contact"])
+
 }
 
 

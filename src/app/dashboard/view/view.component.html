@@ -1,6 +1,8 @@
 <div class = "card-container">
-    <button (click)="sortByStatus(1)"> Sort by read</button>
-    <button (click)="sortByStatus()"> Sort by unread</button>
+    <ng-container *ngIf="messages.length > 0">
+        <button (click)="sortByStatus(1)"> Sort by read</button>
+        <button (click)="sortByStatus()"> Sort by unread</button>
+    </ng-container>
     <ng-container> 
         <!-- <p *ngFor="let message of messages">{{message.name}} - {{message.email}} - {{message.message}} </p> -->
         <app-contact-card 
@@ -13,6 +15,6 @@
         (delete-me)="deleteMessage(i)"
         (edit)="editMessage(i)"
         ></app-contact-card>
-xx
+
     </ng-container>
 </div>
